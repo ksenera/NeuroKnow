@@ -25,3 +25,6 @@ class CognitiveProfile:
     user_id: str
     attention_pattern: str  # 'sprinter', 'marathon', 'cyclical'
     abstraction_preference: str  # 'concrete_first', 'abstract_first'
+    modality_strengths: Dict[LearningModality, float]  # 0-1 scores
+    error_recovery_speed: float  # How quickly they learn from mistakes
+    transfer_capacity: float  # Ability to apply learning across contexts
