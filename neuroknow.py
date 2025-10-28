@@ -12,3 +12,9 @@ class LearningModality(Enum):
     KINESTHETIC = "kinesthetic" 
     AUDITORY = "auditory"
     LOGICAL = "logical"
+
+class ErrorType(Enum):
+    CONCEPTUAL_GAP = "conceptual_gap"
+    PROCEDURAL_ERROR = "procedural_error" 
+    ATTENTION_LAPSE = "attention_lapse"
+    TRANSFER_FAILURE = "transfer_failure"
