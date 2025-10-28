@@ -18,3 +18,10 @@ class ErrorType(Enum):
     PROCEDURAL_ERROR = "procedural_error" 
     ATTENTION_LAPSE = "attention_lapse"
     TRANSFER_FAILURE = "transfer_failure"
+
+@dataclass
+class CognitiveProfile:
+    """each students unique learning type"""
+    user_id: str
+    attention_pattern: str  # 'sprinter', 'marathon', 'cyclical'
+    abstraction_preference: str  # 'concrete_first', 'abstract_first'
