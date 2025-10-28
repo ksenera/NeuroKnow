@@ -33,3 +33,10 @@ class CognitiveProfile:
         """Returns modalities sorted by strength"""
         return sorted(self.modality_strengths.keys(), 
                      key=lambda m: self.modality_strengths[m], reverse=True)
+    
+
+@dataclass 
+class LearningState:
+    """Current snapshot of student's progress"""
+    mastered_concepts: List[str]
+    active_struggles: List[str]
