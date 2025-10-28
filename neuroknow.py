@@ -6,3 +6,9 @@ from enum import Enum
 import numpy as np
 from datetime import datetime
 import json
+
+class LearningModality(Enum):
+    VISUAL = "visual"
+    KINESTHETIC = "kinesthetic" 
+    AUDITORY = "auditory"
+    LOGICAL = "logical"
