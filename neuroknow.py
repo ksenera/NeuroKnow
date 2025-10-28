@@ -28,3 +28,8 @@ class CognitiveProfile:
     modality_strengths: Dict[LearningModality, float]  # 0-1 scores
     error_recovery_speed: float  # How quickly they learn from mistakes
     transfer_capacity: float  # Ability to apply learning across contexts
+
+    def get_optimal_modality_mix(self) -> List[LearningModality]:
+        """Returns modalities sorted by strength"""
+        return sorted(self.modality_strengths.keys(), 
+                     key=lambda m: self.modality_strengths[m], reverse=True)
