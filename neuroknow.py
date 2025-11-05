@@ -50,3 +50,7 @@ class LearningState:
 @dataclass
 class ErrorLog:
     """Detailed error tracking for metacognition"""
+    timestamp: datetime
+    concept: str
+    error_type: ErrorType
+    student_approach: str
