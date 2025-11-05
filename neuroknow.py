@@ -43,3 +43,7 @@ class LearningState:
     cognitive_load: float  # 0-1 scale
     engagement_level: float  # 0-1 scale
     recent_errors: List['ErrorLog']
+
+@dataclass
+class ErrorLog:
+    """Detailed error tracking for metacognition"""
