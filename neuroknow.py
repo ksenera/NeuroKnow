@@ -43,7 +43,10 @@ class LearningState:
     cognitive_load: float  # 0-1 scale
     engagement_level: float  # 0-1 scale
     recent_errors: List['ErrorLog']
-
+    
+    def get_primary_struggle(self) -> Optional[str]:
+        return self.active_struggles[0] if self.active_struggles else None
+    
 @dataclass
 class ErrorLog:
     """Detailed error tracking for metacognition"""
