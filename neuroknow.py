@@ -40,3 +40,6 @@ class LearningState:
     """Current snapshot of student's progress"""
     mastered_concepts: List[str]
     active_struggles: List[str]
+    cognitive_load: float  # 0-1 scale
+    engagement_level: float  # 0-1 scale
+    recent_errors: List['ErrorLog']
