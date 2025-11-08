@@ -65,3 +65,10 @@ class CognitiveFingerprinter:
     def analyze_initial_interaction(self, user_id: str, diagnostic_data: Dict) -> CognitiveProfile:
         """Creates initial cognitive profile from diagnostic"""
         profile = CognitiveProfile(
+            user_id=user_id,
+            attention_pattern=self._assess_attention_pattern(diagnostic_data),
+            abstraction_preference=self._assess_abstraction_pref(diagnostic_data),
+            modality_strengths=self._assess_modality_strengths(diagnostic_data),
+            error_recovery_speed=0.5,  
+            transfer_capacity=0.5   
+        )
