@@ -62,4 +62,6 @@ class CognitiveFingerprinter:
     def __init__(self):
         self.profiles: Dict[str, CognitiveProfile] = {}
     
-    def analyze_initial_interaction(self, user_id: str, diagnostic_data: Dict) -> Cognitive
+    def analyze_initial_interaction(self, user_id: str, diagnostic_data: Dict) -> CognitiveProfile:
+        """Creates initial cognitive profile from diagnostic"""
+        profile = CognitiveProfile(
