@@ -72,3 +72,5 @@ class CognitiveFingerprinter:
             error_recovery_speed=0.5,  
             transfer_capacity=0.5   
         )
+        self.profiles[user_id] = profile
+        return profile
