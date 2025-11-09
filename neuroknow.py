@@ -74,3 +74,7 @@ class CognitiveFingerprinter:
         )
         self.profiles[user_id] = profile
         return profile
+    
+    def update_from_errors(self, user_id: str, error_logs: List[ErrorLog]):
+        """Refines profile based on actual learning data"""
+        profile = self.profiles[user_id]
