@@ -82,3 +82,8 @@ class CognitiveFingerprinter:
         # error recovery speed based on pattern
         recovery_data = self._analyze_error_recovery(error_logs)
         profile.error_recovery_speed = recovery_data['recovery_speed']
+
+        # update learning mod effectiveness based on error log data 
+        success_patterns = self._extract_success_patterns(error_logs)
+        for modality, effectiveness in success_patterns.items():
+            profile.modality_strengths[modality] = effectiveness
