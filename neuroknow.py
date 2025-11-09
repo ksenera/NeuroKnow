@@ -78,3 +78,7 @@ class CognitiveFingerprinter:
     def update_from_errors(self, user_id: str, error_logs: List[ErrorLog]):
         """Refines profile based on actual learning data"""
         profile = self.profiles[user_id]
+
+        # error recovery speed based on pattern
+        recovery_data = self._analyze_error_recovery(error_logs)
+        profile.error_recovery_speed = recovery_data['recovery_speed']
