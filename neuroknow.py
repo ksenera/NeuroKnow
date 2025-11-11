@@ -91,6 +91,6 @@ class CognitiveFingerprinter:
     def assess_attention_pattern(self, data: Dict) -> str:
         focus_durations = data.get('focus_durations', [])
         avg_focus = np.mean(focus_durations) if focus_durations else 25
-        if 
-        elif 
-        else 
+        if avg_focus < 15: return 'sprinter'
+        elif avg_focus > 40: return 'marathon' 
+        else: return 'cyclical'
