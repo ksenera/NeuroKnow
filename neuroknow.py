@@ -94,3 +94,5 @@ class CognitiveFingerprinter:
         if avg_focus < 15: return 'sprinter'
         elif avg_focus > 40: return 'marathon' 
         else: return 'cyclical'
+
+    def assess_modality_strengths(self, data: Dict) -> Dict[LearningModality, float]:
