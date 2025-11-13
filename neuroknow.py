@@ -96,3 +96,10 @@ class CognitiveFingerprinter:
         else: return 'cyclical'
 
     def assess_modality_strengths(self, data: Dict) -> Dict[LearningModality, float]:
+        # something here to use diagnostic results 
+        return {
+            LearningModality.VISUAL: 0.8,
+            LearningModality.KINESTHETIC: 0.6,
+            LearningModality.AUDITORY: 0.4,
+            LearningModality.LOGICAL: 0.9
+        }
