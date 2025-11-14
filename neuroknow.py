@@ -113,3 +113,12 @@ class KnowledgeGraph:
             'prerequisites': [],
             'related_concepts': ['fraction_division', 'decimal_conversion'],
             'transfer_domains': ['pizza_slicing', 'music_rhythms', 'sports_statistics'],
+            'cognitive_demands': ['part_whole_thinking', 'proportional_reasoning']
+            },
+            'fraction_division': {
+                'prerequisites': ['fraction_basics', 'multiplication'],
+                'related_concepts': ['ratio_reasoning', 'algebraic_fractions'],
+                'transfer_domains': ['recipe_scaling', 'code_optimization', 'map_reading'],
+                'cognitive_demands': ['multiplicative_inverse', 'abstract_representation']
+            }
+        }
