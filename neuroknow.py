@@ -103,3 +103,9 @@ class CognitiveFingerprinter:
             LearningModality.AUDITORY: 0.4,
             LearningModality.LOGICAL: 0.9
         }
+
+class KnowledgeGraph:
+    """Maps concepts and their cognitive relationships"""
+    
+    def __init__(self):
+        self.concepts: Dict[str, Dict] = {}
