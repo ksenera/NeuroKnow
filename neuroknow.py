@@ -108,4 +108,8 @@ class KnowledgeGraph:
     """Maps concepts and their cognitive relationships"""
     
     def __init__(self):
-        self.concepts: Dict[str, Dict] = {}
+        self.concepts: Dict[str, Dict] = {
+            'fraction_basics': {
+            'prerequisites': [],
+            'related_concepts': ['fraction_division', 'decimal_conversion'],
+            'transfer_domains': ['pizza_slicing', 'music_rhythms', 'sports_statistics'],
