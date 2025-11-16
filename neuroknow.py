@@ -122,3 +122,5 @@ class KnowledgeGraph:
                 'cognitive_demands': ['multiplicative_inverse', 'abstract_representation']
             }
         }
+    def get_transfer_domains(self, concept: str, cognitive_profile: CognitiveProfile) -> List[str]:
+        """ best transfer domains for this brain """
