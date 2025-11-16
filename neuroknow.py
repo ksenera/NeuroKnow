@@ -124,3 +124,6 @@ class KnowledgeGraph:
         }
     def get_transfer_domains(self, concept: str, cognitive_profile: CognitiveProfile) -> List[str]:
         """ best transfer domains for this brain """
+        base_domains = self.concepts.get(concept, {}).get('transfer_domains', [])
+
+        return[] 
