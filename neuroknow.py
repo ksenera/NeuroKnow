@@ -125,5 +125,5 @@ class KnowledgeGraph:
     def get_transfer_domains(self, concept: str, cognitive_profile: CognitiveProfile) -> List[str]:
         """ best transfer domains for this brain """
         base_domains = self.concepts.get(concept, {}).get('transfer_domains', [])
-
-        return[] 
+        if cognitive_profile.abstraction_preference == 'concrete_first':
+            return[d for d in base_domains if d in ['pizza_slicing', 'recipe_scaling']] 
