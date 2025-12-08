@@ -127,3 +127,16 @@ class KnowledgeGraph:
         base_domains = self.concepts.get(concept, {}).get('transfer_domains', [])
         if cognitive_profile.abstraction_preference == 'concrete_first':
             return[d for d in base_domains if d in ['pizza_slicing', 'recipe_scaling']] 
+        
+
+class DynamicPathfinder:
+    """The real-time learning GPS"""
+    
+    def __init__(self, knowledge_graph: KnowledgeGraph):
+        self.knowledge_graph = knowledge_graph
+        self.learning_paths: Dict[str, List[str]] = {}
+    
+    def calculate_next_step(self, profile: CognitiveProfile, state: LearningState) -> Dict:
+        """Determines optimal next learning activity"""
+        target_concept = state.get_primary_struggle() or self._get_next_concept(state)
+        
