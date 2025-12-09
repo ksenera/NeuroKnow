@@ -139,4 +139,10 @@ class DynamicPathfinder:
     def calculate_next_step(self, profile: CognitiveProfile, state: LearningState) -> Dict:
         """Determines optimal next learning activity"""
         target_concept = state.get_primary_struggle() or self._get_next_concept(state)
-        
+        return {
+            'target_concept': target_concept,
+            'modality': profile.get_optimal_modality_mix()[0],
+            'transfer_domain': self.knowledge_graph.get_transfer_domains(target_concept, profile)[0],
+            'difficulty_level': self._calculate_difficulty(profile, state),
+            'cognitive_stretch': 0.7  # 0-1 scale
+        }
