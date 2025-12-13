@@ -146,3 +146,10 @@ class DynamicPathfinder:
             'difficulty_level': self._calculate_difficulty(profile, state),
             'cognitive_stretch': 0.7  # 0-1 scale
         }
+    def _calculate_difficulty(self, profile: CognitiveProfile, state: LearningState) -> float:
+        base_difficulty = 0.5
+        if state.recent_errors:
+            success_rate = len([e for e in state.recent_errors if e.error_type != ErrorType.CONCEPTUAL_GAP]) / len(state.recent_errors)
+            adjustment = (success_rate - 0.7) * 0.3  # Adjust ±0.3 based on performance
+            return max(0.1, min(0.9, base_difficulty + adjustment))
+        return base_difficulty
