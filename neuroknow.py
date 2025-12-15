@@ -158,7 +158,7 @@ class DynamicPathfinder:
 
 
 
-    class NeuroKnowEngine:
+class NeuroKnowEngine:
     """Main system orchestrator"""
     
     def __init__(self):
@@ -168,3 +168,17 @@ class DynamicPathfinder:
         self.transfer_engine = TransferEngine()
         self.meta_coach = MetaCognitionCoach()
         self.learning_states: Dict[str, LearningState] = {}
+
+
+
+    def initialize_student(self, user_id: str, diagnostic_data: Dict) -> CognitiveProfile:
+        """Sets up a new student"""
+        profile = self.fingerprinter.analyze_initial_interaction(user_id, diagnostic_data)
+        self.learning_states[user_id] = LearningState(
+            mastered_concepts=[],
+            active_struggles=['fraction_basics'],  
+            cognitive_load=0.3,
+            engagement_level=0.8,
+            recent_errors=[]
+        )
+        return profile
