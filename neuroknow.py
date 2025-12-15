@@ -153,3 +153,18 @@ class DynamicPathfinder:
             adjustment = (success_rate - 0.7) * 0.3  # Adjust ±0.3 based on performance
             return max(0.1, min(0.9, base_difficulty + adjustment))
         return base_difficulty
+    
+
+
+
+
+    class NeuroKnowEngine:
+    """Main system orchestrator"""
+    
+    def __init__(self):
+        self.fingerprinter = CognitiveFingerprinter()
+        self.knowledge_graph = KnowledgeGraph()
+        self.pathfinder = DynamicPathfinder(self.knowledge_graph)
+        self.transfer_engine = TransferEngine()
+        self.meta_coach = MetaCognitionCoach()
+        self.learning_states: Dict[str, LearningState] = {}
