@@ -182,3 +182,13 @@ class NeuroKnowEngine:
             recent_errors=[]
         )
         return profile
+    
+
+     Add importance values on bars
+for bar, imp in zip(bars, feature_importance['Importance']):
+    ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.01, 
+            f'{imp:.3f}', ha='center', va='bottom', fontsize=11)
+
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.show()
