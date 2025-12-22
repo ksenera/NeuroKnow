@@ -192,3 +192,15 @@ for bar, imp in zip(bars, feature_importance['Importance']):
 plt.xticks(rotation=45, ha='right')
 plt.tight_layout()
 plt.show()
+
+
+class NeuroKnowEngine:
+    """Main system orchestrator"""
+    
+    def __init__(self):
+        self.fingerprinter = CognitiveFingerprinter()
+        self.knowledge_graph = KnowledgeGraph()
+        self.pathfinder = DynamicPathfinder(self.knowledge_graph)
+        self.transfer_engine = TransferEngine()
+        self.meta_coach = MetaCognitionCoach()
+        self.learning_states: Dict[str, LearningState] = {}
