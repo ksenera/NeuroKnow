@@ -154,6 +154,14 @@ class DynamicPathfinder:
             return max(0.1, min(0.9, base_difficulty + adjustment))
         return base_difficulty
     
+class TransferEngine:
+    """Creates IMO-style transfer challenges"""
+    
+    def generate_challenge(self, concept: str, domain: str, modality: LearningModality) -> Dict:
+        """Generates a context-shifted problem"""
+        
+        challenge_templates = {
+            ('fraction_division', 'recipe_scaling', LearningModality.KINESTHETIC): 
 
 
 
@@ -184,23 +192,3 @@ class NeuroKnowEngine:
         return profile
     
 
-     Add importance values on bars
-for bar, imp in zip(bars, feature_importance['Importance']):
-    ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.01, 
-            f'{imp:.3f}', ha='center', va='bottom', fontsize=11)
-
-plt.xticks(rotation=45, ha='right')
-plt.tight_layout()
-plt.show()
-
-
-class NeuroKnowEngine:
-    """Main system orchestrator"""
-    
-    def __init__(self):
-        self.fingerprinter = CognitiveFingerprinter()
-        self.knowledge_graph = KnowledgeGraph()
-        self.pathfinder = DynamicPathfinder(self.knowledge_graph)
-        self.transfer_engine = TransferEngine()
-        self.meta_coach = MetaCognitionCoach()
-        self.learning_states: Dict[str, LearningState] = {}
