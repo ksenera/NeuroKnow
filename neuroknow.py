@@ -162,6 +162,10 @@ class TransferEngine:
         
         challenge_templates = {
             ('fraction_division', 'recipe_scaling', LearningModality.KINESTHETIC): 
+            
+                "You're making a recipe that serves 4 people, but you need to serve 6. "
+                "The recipe calls for 3/4 cup of flour. How do you adjust the ingredients? "
+                "Use physical measuring cups to experiment.",
 
 
 
